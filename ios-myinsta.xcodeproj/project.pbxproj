@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8911693D28DB2E4200EA0574 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8911693C28DB2E3B00EA0574 /* Billabong.ttf */; };
+		8937755428DB398200177990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8937755628DB398200177990 /* Localizable.strings */; };
 		8976D63728DAF2C200443DD5 /* ios_myinstaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */; };
 		8976D63B28DAF2C400443DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8976D63A28DAF2C400443DD5 /* Assets.xcassets */; };
 		8976D63E28DAF2C400443DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8976D63D28DAF2C400443DD5 /* Preview Assets.xcassets */; };
@@ -19,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8911693C28DB2E3B00EA0574 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		8911693E28DB2E5D00EA0574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8937755528DB398200177990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8976D63328DAF2C200443DD5 /* ios-myinsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-myinsta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_myinstaApp.swift; sourceTree = "<group>"; };
 		8976D63A28DAF2C400443DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		8976D62A28DAF2C200443DD5 = {
 			isa = PBXGroup;
 			children = (
+				8937755628DB398200177990 /* Localizable.strings */,
 				8976D63528DAF2C200443DD5 /* ios-myinsta */,
 				8976D63428DAF2C200443DD5 /* Products */,
 			);
@@ -61,6 +67,7 @@
 		8976D63528DAF2C200443DD5 /* ios-myinsta */ = {
 			isa = PBXGroup;
 			children = (
+				8911693E28DB2E5D00EA0574 /* Info.plist */,
 				8976D64A28DAF32E00443DD5 /* utils */,
 				8976D64928DAF32700443DD5 /* screens */,
 				8976D64B28DAF33400443DD5 /* appUtil */,
@@ -99,6 +106,7 @@
 		8976D64B28DAF33400443DD5 /* appUtil */ = {
 			isa = PBXGroup;
 			children = (
+				8911693C28DB2E3B00EA0574 /* Billabong.ttf */,
 				8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */,
 				8976D63F28DAF2C400443DD5 /* Persistence.swift */,
 				8976D63A28DAF2C400443DD5 /* Assets.xcassets */,
@@ -188,6 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8911693D28DB2E4200EA0574 /* Billabong.ttf in Resources */,
+				8937755428DB398200177990 /* Localizable.strings in Resources */,
 				8976D63E28DAF2C400443DD5 /* Preview Assets.xcassets in Resources */,
 				8976D63B28DAF2C400443DD5 /* Assets.xcassets in Resources */,
 			);
@@ -211,6 +221,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8937755628DB398200177990 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8937755528DB398200177990 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8976D64428DAF2C400443DD5 /* Debug */ = {
@@ -338,6 +359,7 @@
 				DEVELOPMENT_TEAM = 9PFY368N59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-myinsta/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -367,6 +389,7 @@
 				DEVELOPMENT_TEAM = 9PFY368N59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-myinsta/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
