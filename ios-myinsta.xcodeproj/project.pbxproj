@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		8911693D28DB2E4200EA0574 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8911693C28DB2E3B00EA0574 /* Billabong.ttf */; };
 		8937755428DB398200177990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8937755628DB398200177990 /* Localizable.strings */; };
+		8937757928DBA00F00177990 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937757828DBA00F00177990 /* User.swift */; };
+		8937757C28DBA08100177990 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937757B28DBA08100177990 /* SessionStore.swift */; };
+		8937758128DBA1D400177990 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758028DBA1D400177990 /* HomeScreen.swift */; };
+		8937758828DBA37D00177990 /* HomeFeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758728DBA37D00177990 /* HomeFeedScreen.swift */; };
+		8937758A28DBA39100177990 /* HomeSearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758928DBA39100177990 /* HomeSearchScreen.swift */; };
+		8937758C28DBA3A900177990 /* HomeUploadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758B28DBA3A900177990 /* HomeUploadScreen.swift */; };
+		8937758E28DBA3BB00177990 /* HomeLikesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758D28DBA3BB00177990 /* HomeLikesScreen.swift */; };
+		8937759028DBA3CF00177990 /* HomeProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758F28DBA3CF00177990 /* HomeProfileScreen.swift */; };
+		8937759328DBAE6400177990 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937759228DBAE6400177990 /* Coordinator.swift */; };
+		8937759628DBAF8300177990 /* ImagePickeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937759528DBAF8300177990 /* ImagePickeView.swift */; };
 		8976D63728DAF2C200443DD5 /* ios_myinstaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */; };
 		8976D63B28DAF2C400443DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8976D63A28DAF2C400443DD5 /* Assets.xcassets */; };
 		8976D63E28DAF2C400443DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8976D63D28DAF2C400443DD5 /* Preview Assets.xcassets */; };
@@ -24,6 +34,16 @@
 		8911693C28DB2E3B00EA0574 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		8911693E28DB2E5D00EA0574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8937755528DB398200177990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8937757828DBA00F00177990 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8937757B28DBA08100177990 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		8937758028DBA1D400177990 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		8937758728DBA37D00177990 /* HomeFeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedScreen.swift; sourceTree = "<group>"; };
+		8937758928DBA39100177990 /* HomeSearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchScreen.swift; sourceTree = "<group>"; };
+		8937758B28DBA3A900177990 /* HomeUploadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUploadScreen.swift; sourceTree = "<group>"; };
+		8937758D28DBA3BB00177990 /* HomeLikesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLikesScreen.swift; sourceTree = "<group>"; };
+		8937758F28DBA3CF00177990 /* HomeProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileScreen.swift; sourceTree = "<group>"; };
+		8937759228DBAE6400177990 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8937759528DBAF8300177990 /* ImagePickeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickeView.swift; sourceTree = "<group>"; };
 		8976D63328DAF2C200443DD5 /* ios-myinsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-myinsta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_myinstaApp.swift; sourceTree = "<group>"; };
 		8976D63A28DAF2C400443DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +67,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8937757528DB9FB700177990 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				8937757728DB9FCA00177990 /* user */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		8937757628DB9FBD00177990 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				8937757A28DBA07100177990 /* sessionStore */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		8937757728DB9FCA00177990 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				8937757828DBA00F00177990 /* User.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		8937757A28DBA07100177990 /* sessionStore */ = {
+			isa = PBXGroup;
+			children = (
+				8937757B28DBA08100177990 /* SessionStore.swift */,
+			);
+			path = sessionStore;
+			sourceTree = "<group>";
+		};
+		8937757D28DBA1AC00177990 /* homeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8937758628DBA35700177990 /* homeProfileScreen */,
+				8937758528DBA34900177990 /* homeLikesScreen */,
+				8937758428DBA34100177990 /* homeUploadScreen */,
+				8937758328DBA33900177990 /* homeSearchScreen */,
+				8937758228DBA33100177990 /* homeFeedScreen */,
+				8937758028DBA1D400177990 /* HomeScreen.swift */,
+			);
+			path = homeScreen;
+			sourceTree = "<group>";
+		};
+		8937758228DBA33100177990 /* homeFeedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8937758728DBA37D00177990 /* HomeFeedScreen.swift */,
+			);
+			path = homeFeedScreen;
+			sourceTree = "<group>";
+		};
+		8937758328DBA33900177990 /* homeSearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8937758928DBA39100177990 /* HomeSearchScreen.swift */,
+			);
+			path = homeSearchScreen;
+			sourceTree = "<group>";
+		};
+		8937758428DBA34100177990 /* homeUploadScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8937758B28DBA3A900177990 /* HomeUploadScreen.swift */,
+			);
+			path = homeUploadScreen;
+			sourceTree = "<group>";
+		};
+		8937758528DBA34900177990 /* homeLikesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8937758D28DBA3BB00177990 /* HomeLikesScreen.swift */,
+			);
+			path = homeLikesScreen;
+			sourceTree = "<group>";
+		};
+		8937758628DBA35700177990 /* homeProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8937758F28DBA3CF00177990 /* HomeProfileScreen.swift */,
+			);
+			path = homeProfileScreen;
+			sourceTree = "<group>";
+		};
+		8937759128DBAE5400177990 /* coorDinator */ = {
+			isa = PBXGroup;
+			children = (
+				8937759228DBAE6400177990 /* Coordinator.swift */,
+			);
+			path = coorDinator;
+			sourceTree = "<group>";
+		};
+		8937759428DBAF7700177990 /* imagePickeView */ = {
+			isa = PBXGroup;
+			children = (
+				8937759528DBAF8300177990 /* ImagePickeView.swift */,
+			);
+			path = imagePickeView;
+			sourceTree = "<group>";
+		};
 		8976D62A28DAF2C200443DD5 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +188,8 @@
 		8976D63528DAF2C200443DD5 /* ios-myinsta */ = {
 			isa = PBXGroup;
 			children = (
+				8937757628DB9FBD00177990 /* service */,
+				8937757528DB9FB700177990 /* models */,
 				8911693E28DB2E5D00EA0574 /* Info.plist */,
 				8976D64A28DAF32E00443DD5 /* utils */,
 				8976D64928DAF32700443DD5 /* screens */,
@@ -88,6 +211,7 @@
 		8976D64928DAF32700443DD5 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				8937757D28DBA1AC00177990 /* homeScreen */,
 				8976D65028DAF39A00443DD5 /* signUpScreen */,
 				8976D64F28DAF38F00443DD5 /* signInScreen */,
 				8976D64C28DAF36700443DD5 /* startScreen */,
@@ -98,6 +222,8 @@
 		8976D64A28DAF32E00443DD5 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				8937759428DBAF7700177990 /* imagePickeView */,
+				8937759128DBAE5400177990 /* coorDinator */,
 				8976D65328DAF40E00443DD5 /* Utils.swift */,
 			);
 			path = utils;
@@ -210,13 +336,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8937759328DBAE6400177990 /* Coordinator.swift in Sources */,
+				8937758A28DBA39100177990 /* HomeSearchScreen.swift in Sources */,
 				8976D64028DAF2C400443DD5 /* Persistence.swift in Sources */,
+				8937759028DBA3CF00177990 /* HomeProfileScreen.swift in Sources */,
 				8976D65228DAF3B300443DD5 /* SignInScreen.swift in Sources */,
 				8976D65628DB03DF00443DD5 /* SignUpScreen.swift in Sources */,
 				8976D63728DAF2C200443DD5 /* ios_myinstaApp.swift in Sources */,
+				8937757928DBA00F00177990 /* User.swift in Sources */,
+				8937759628DBAF8300177990 /* ImagePickeView.swift in Sources */,
+				8937757C28DBA08100177990 /* SessionStore.swift in Sources */,
+				8937758E28DBA3BB00177990 /* HomeLikesScreen.swift in Sources */,
+				8937758128DBA1D400177990 /* HomeScreen.swift in Sources */,
 				8976D64E28DAF37800443DD5 /* StartScreen.swift in Sources */,
 				8976D64328DAF2C400443DD5 /* ios_myinsta.xcdatamodeld in Sources */,
 				8976D65428DAF40E00443DD5 /* Utils.swift in Sources */,
+				8937758C28DBA3A900177990 /* HomeUploadScreen.swift in Sources */,
+				8937758828DBA37D00177990 /* HomeFeedScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +496,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-myinsta/Info.plist";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Get Camera image in upload srver document";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Get Camera image in upload srver document";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -390,6 +528,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-myinsta/Info.plist";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Get Camera image in upload srver document";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Get Camera image in upload srver document";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

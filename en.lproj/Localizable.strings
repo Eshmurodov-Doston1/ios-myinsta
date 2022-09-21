@@ -8,7 +8,14 @@
 "no_account" = "Don't have an account?";
 "allreadey_account" = "Alereadey have an Account";
 "instagram_text" = "Instagram";
-
-
+"home"="Home";
+"search"="Search";
+"upload"="Upload";
+"likes"="Likes";
+"profile"="Profile";
+"caption"="Caption";
+"upload_image"="Upload image";
+"pick_photo"="Pick Photo";
+"take_photo"= "Take Photo";
 
 

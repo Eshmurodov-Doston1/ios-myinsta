@@ -1,15 +1,18 @@
-//
-//  StartScreen.swift
-//  ios-myinsta
-//
-//  Created by macbro on 21/09/22.
-//
-
 import SwiftUI
 
 struct StartScreen: View {
+    @EnvironmentObject var sessionStore:SessionStore
     var body: some View {
-        SignInScreen()
+        VStack{
+            if sessionStore.session != nil{
+                HomeScreen()
+            }else{
+                SignInScreen()
+            }
+        }
+        .onAppear{
+            sessionStore.listener()
+        }
     }
 }
 
