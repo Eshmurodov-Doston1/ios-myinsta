@@ -1,15 +1,25 @@
-//
-//  HomeLikesScreen.swift
-//  ios-myinsta
-//
-//  Created by macbro on 22/09/22.
-//
-
 import SwiftUI
 
 struct HomeLikesScreen: View {
+    @ObservedObject var likeViewModel = LikesViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ZStack{
+                List{
+                    ForEach(likeViewModel.items,id: \.self){ item in
+                        ItemHomePost(post: item,isLick: true)
+                            .listRowInsets(EdgeInsets())
+                    }
+                }
+                .listStyle(PlainListStyle())
+            }
+            .navigationBarTitle("Likes",displayMode: .inline)
+        }
+        .onAppear{
+            likeViewModel.itemsUploadData {
+                print(likeViewModel.items.count)
+            }
+        }
     }
 }
 
