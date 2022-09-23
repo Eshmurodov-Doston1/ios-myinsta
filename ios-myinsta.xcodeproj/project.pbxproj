@@ -19,6 +19,10 @@
 		8937759028DBA3CF00177990 /* HomeProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937758F28DBA3CF00177990 /* HomeProfileScreen.swift */; };
 		8937759328DBAE6400177990 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937759228DBAE6400177990 /* Coordinator.swift */; };
 		8937759628DBAF8300177990 /* ImagePickeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937759528DBAF8300177990 /* ImagePickeView.swift */; };
+		895F2E0928DDDE54001004A0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F2E0828DDDE54001004A0 /* SearchViewModel.swift */; };
+		895F2E0C28DDE13E001004A0 /* ItemSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F2E0B28DDE13E001004A0 /* ItemSearch.swift */; };
+		895F2E0F28DDEAE8001004A0 /* ItemProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F2E0E28DDEAE8001004A0 /* ItemProfile.swift */; };
+		895F2E1228DDED11001004A0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F2E1128DDED11001004A0 /* ProfileViewModel.swift */; };
 		8976D63728DAF2C200443DD5 /* ios_myinstaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */; };
 		8976D63B28DAF2C400443DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8976D63A28DAF2C400443DD5 /* Assets.xcassets */; };
 		8976D63E28DAF2C400443DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8976D63D28DAF2C400443DD5 /* Preview Assets.xcassets */; };
@@ -52,6 +56,10 @@
 		8937758F28DBA3CF00177990 /* HomeProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileScreen.swift; sourceTree = "<group>"; };
 		8937759228DBAE6400177990 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8937759528DBAF8300177990 /* ImagePickeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickeView.swift; sourceTree = "<group>"; };
+		895F2E0828DDDE54001004A0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		895F2E0B28DDE13E001004A0 /* ItemSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearch.swift; sourceTree = "<group>"; };
+		895F2E0E28DDEAE8001004A0 /* ItemProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProfile.swift; sourceTree = "<group>"; };
+		895F2E1128DDED11001004A0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8976D63328DAF2C200443DD5 /* ios-myinsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-myinsta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8976D63628DAF2C200443DD5 /* ios_myinstaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_myinstaApp.swift; sourceTree = "<group>"; };
 		8976D63A28DAF2C400443DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +198,38 @@
 			path = imagePickeView;
 			sourceTree = "<group>";
 		};
+		895F2E0728DDDE45001004A0 /* searchViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				895F2E0828DDDE54001004A0 /* SearchViewModel.swift */,
+			);
+			path = searchViewModel;
+			sourceTree = "<group>";
+		};
+		895F2E0A28DDE132001004A0 /* itemSearch */ = {
+			isa = PBXGroup;
+			children = (
+				895F2E0B28DDE13E001004A0 /* ItemSearch.swift */,
+			);
+			path = itemSearch;
+			sourceTree = "<group>";
+		};
+		895F2E0D28DDEAD5001004A0 /* itemProfile */ = {
+			isa = PBXGroup;
+			children = (
+				895F2E0E28DDEAE8001004A0 /* ItemProfile.swift */,
+			);
+			path = itemProfile;
+			sourceTree = "<group>";
+		};
+		895F2E1028DDECFC001004A0 /* profileViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				895F2E1128DDED11001004A0 /* ProfileViewModel.swift */,
+			);
+			path = profileViewModel;
+			sourceTree = "<group>";
+		};
 		8976D62A28DAF2C200443DD5 = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +333,8 @@
 		89FDCEB428DC577F00485F01 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				895F2E1028DDECFC001004A0 /* profileViewModel */,
+				895F2E0728DDDE45001004A0 /* searchViewModel */,
 				89FDCEB628DC579000485F01 /* likesViewModel */,
 				89FDCEB528DC578800485F01 /* homeViewModel */,
 			);
@@ -326,6 +368,8 @@
 		89FDCEBE28DC590F00485F01 /* items */ = {
 			isa = PBXGroup;
 			children = (
+				895F2E0D28DDEAD5001004A0 /* itemProfile */,
+				895F2E0A28DDE132001004A0 /* itemSearch */,
 				89FDCEBF28DC591500485F01 /* itemHomePost */,
 			);
 			path = items;
@@ -345,7 +389,6 @@
 				193CCDE4546A6F8B42C9A97D /* Pods-ios-myinsta.debug.xcconfig */,
 				09B625617F333CFE5FD65614 /* Pods-ios-myinsta.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -465,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895F2E0928DDDE54001004A0 /* SearchViewModel.swift in Sources */,
 				8937759328DBAE6400177990 /* Coordinator.swift in Sources */,
 				8937758A28DBA39100177990 /* HomeSearchScreen.swift in Sources */,
 				8976D64028DAF2C400443DD5 /* Persistence.swift in Sources */,
@@ -472,10 +516,13 @@
 				8937759028DBA3CF00177990 /* HomeProfileScreen.swift in Sources */,
 				8976D65228DAF3B300443DD5 /* SignInScreen.swift in Sources */,
 				8976D65628DB03DF00443DD5 /* SignUpScreen.swift in Sources */,
+				895F2E0C28DDE13E001004A0 /* ItemSearch.swift in Sources */,
 				8976D63728DAF2C200443DD5 /* ios_myinstaApp.swift in Sources */,
 				8937757928DBA00F00177990 /* User.swift in Sources */,
 				8937759628DBAF8300177990 /* ImagePickeView.swift in Sources */,
+				895F2E0F28DDEAE8001004A0 /* ItemProfile.swift in Sources */,
 				8937757C28DBA08100177990 /* SessionStore.swift in Sources */,
+				895F2E1228DDED11001004A0 /* ProfileViewModel.swift in Sources */,
 				89FDCEC128DC592600485F01 /* ItemHomePost.swift in Sources */,
 				8937758E28DBA3BB00177990 /* HomeLikesScreen.swift in Sources */,
 				8937758128DBA1D400177990 /* HomeScreen.swift in Sources */,
