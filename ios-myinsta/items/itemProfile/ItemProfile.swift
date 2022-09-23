@@ -4,7 +4,7 @@ struct ItemProfile: View {
     var post:Post
     var length:CGFloat
     var body: some View {
-        VStack(alignment:.leading,spacing:0){
+        VStack(alignment:.center,spacing:0){
             WebImage(url: URL(string: post.imgUrl!))
                 .resizable()
                 .frame(maxWidth:length,maxHeight:length)
@@ -26,9 +26,7 @@ struct ItemProfile: View {
                     .frame(maxWidth:length)
                     
                     .lineLimit(2)
-            }
-            .padding(.horizontal,10)
-            
+            } 
                
         }
     }
