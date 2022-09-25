@@ -11,17 +11,30 @@ struct SignUpScreen: View {
     @State var messageError = ""
     @EnvironmentObject var sessionStore:SessionStore
     func doSignUp(){
-        signUpViewModel.signUp(email: email, password: password) { isStatus, errorMessage in
-            if errorMessage != nil {
+        
+        var result = Utils().validView(email: email, password: password)
+        
+        if result == nil {
+            if cPassword.lowercased() == password.lowercased() {
+                signUpViewModel.signUp(email: email, password: password) { isStatus, errorMessage in
+                    if errorMessage != nil {
+                        isShowing.toggle()
+                        messageError = errorMessage ?? "No Data"
+                    }
+                    if isStatus {
+                        var user = User(email: email, displayName: fullName, password: password, imageUrl: "")
+                        user.uid = sessionStore.session?.uid
+                        presentation.wrappedValue.dismiss()
+                    }
+                    
+                }
+            }else{
                 isShowing.toggle()
-                messageError = errorMessage ?? "No Data"
+                messageError = String(localized: "",comment: "Confirm Password")
             }
-            if isStatus {
-                var user = User(email: email, displayName: fullName, password: password, imageUrl: "")
-                user.uid = sessionStore.session?.uid
-                presentation.wrappedValue.dismiss()
-            }
-            
+        }else {
+            isShowing.toggle()
+            messageError = result!
         }
     }
     var body: some View {

@@ -8,17 +8,18 @@ struct SignInScreen: View {
     @State var isShowing = false
     @State var messageError = ""
     func doSignIn(){
-        signInVieModel.signIns(email: email, password: password, complation: { (result,error) in
-            if error != nil {
-                isShowing.toggle()
-                messageError = error!
-            }
-            if result {
-               
-            } else {
-               
-            }
-        })
+        var result = Utils().validView(email: email, password: password)
+        if result == nil {
+            signInVieModel.signIns(email: email, password: password, complation: { (result,error) in
+                if error != nil {
+                    isShowing.toggle()
+                    messageError = error!
+                }
+            })
+        }else{
+            isShowing.toggle()
+            messageError = result!
+        }
     }
     
     var body: some View {
@@ -40,7 +41,7 @@ struct SignInScreen: View {
                         .font(Font.system(size: 16))
                         .cornerRadius(6)
                     
-                    TextField("password", text: $password)
+                    SecureField("password", text: $password)
                         .foregroundColor(.white)
                         .frame(height:45)
                         .padding(.horizontal,8)
@@ -48,6 +49,9 @@ struct SignInScreen: View {
                         .font(Font.system(size: 16))
                         .cornerRadius(6)
                         .padding(.top,5)
+                       
+                    
+                        
                     
                     Button {
                         if email.isEmpty {
