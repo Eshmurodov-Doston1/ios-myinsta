@@ -17,5 +17,8 @@
 "upload_image"="Upload image";
 "pick_photo"="Pick Photo";
 "take_photo"= "Take Photo";
-
-
+"no_email"="Email not available";
+"no_password"="Password not available";
+"no_fullName"="Your first name and last name?";
+"confirm_password_text"="Please Confirm Password";
+"log_out"="Do you want to log out?";

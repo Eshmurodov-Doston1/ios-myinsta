@@ -10,11 +10,18 @@ struct HomeProfileScreen: View {
     @State var isPickerDisplay = false
     @State var selectedImage:UIImage?
     @State var sourseType:UIImagePickerController.SourceType = .camera
+    @State var isShowingAlert = false
+    @State var messageAlert = ""
     func postSize()->CGFloat {
         if level == 1 {
             return UIScreen.width/CGFloat(level) - 20
         }
         return UIScreen.width/CGFloat(level) - 15
+    }
+    
+    
+    func signOut(){
+        profileViewModel.signOut()
     }
     
     var body: some View {
@@ -162,13 +169,21 @@ struct HomeProfileScreen: View {
             }
             .navigationBarTitle("Profile",displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
+                isShowingAlert.toggle()
+                messageAlert = String(localized: "log_out",comment: "Comment data")
                 
             }, label: {
                 Image(systemName: "pip.exit")
                     .resizable()
                     .frame(maxWidth:20,maxHeight: 20)
                     .foregroundColor(.red)
-            }))
+            })
+                .alert(isPresented: $isShowingAlert) {
+                    return Alert(title: Text("Sig Out"), message: Text(messageAlert), primaryButton: .destructive(Text("Confirm"),action: {
+                        signOut()
+                    }), secondaryButton: .cancel())
+                }
+            )
         }
         .onAppear{
             profileViewModel.listItems {

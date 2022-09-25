@@ -6,7 +6,7 @@
 //
 
 import CoreData
-
+import Firebase
 struct PersistenceController {
     static let shared = PersistenceController()
 

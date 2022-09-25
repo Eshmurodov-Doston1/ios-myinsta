@@ -7,4 +7,8 @@ target 'ios-myinsta' do
 
   # Pods for ios-myinsta
   pod 'SDWebImageSwiftUI'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 end

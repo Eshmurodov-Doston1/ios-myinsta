@@ -3,6 +3,24 @@ import SwiftUI
 struct SignInScreen: View {
     @State var email:String = ""
     @State var password:String = ""
+    @ObservedObject var signInVieModel = SignInViewModel()
+    @EnvironmentObject var sessionStore:SessionStore
+    @State var isShowing = false
+    @State var messageError = ""
+    func doSignIn(){
+        signInVieModel.signIns(email: email, password: password, complation: { (result,error) in
+            if error != nil {
+                isShowing.toggle()
+                messageError = error!
+            }
+            if result {
+               
+            } else {
+               
+            }
+        })
+    }
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -32,7 +50,15 @@ struct SignInScreen: View {
                         .padding(.top,5)
                     
                     Button {
-                        
+                        if email.isEmpty {
+                            isShowing.toggle()
+                            messageError = String(localized: "no_email",comment: "Correct message")
+                        }else if password.isEmpty {
+                            isShowing.toggle()
+                            messageError = String(localized: "no_password",comment: "Correct message")
+                        } else {
+                            doSignIn()
+                        }
                     } label: {
                         Text("sign_in")
                             .foregroundColor(.white)
@@ -43,6 +69,11 @@ struct SignInScreen: View {
                         .stroke(lineWidth:1.5)
                         .foregroundColor(.white))
                     .padding(.top,5)
+                    .alert(isPresented: $isShowing){
+                        return Alert(title: Text("Error"), message: Text(messageError), primaryButton: .destructive(Text("Confirm")), secondaryButton: .cancel())
+                    }
+                    
+                    
                     Spacer()
                     HStack{
                         Text("no_account")
@@ -59,8 +90,14 @@ struct SignInScreen: View {
 
                     }.padding()
                 }.padding()
+                if signInVieModel.isLoading {
+                    ProgressView("Loading...")
+                }
             }
             .edgesIgnoringSafeArea(.all)
+            
+            
+            
         }
         .accentColor(.white)
     }

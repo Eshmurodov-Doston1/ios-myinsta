@@ -6,6 +6,24 @@ struct SignUpScreen: View {
     @State var password:String = ""
     @State var cPassword:String = ""
     @Environment(\.presentationMode) var presentation
+    @ObservedObject var signUpViewModel = SignUpViewModel()
+    @State var isShowing = false
+    @State var messageError = ""
+    @EnvironmentObject var sessionStore:SessionStore
+    func doSignUp(){
+        signUpViewModel.signUp(email: email, password: password) { isStatus, errorMessage in
+            if errorMessage != nil {
+                isShowing.toggle()
+                messageError = errorMessage ?? "No Data"
+            }
+            if isStatus {
+                var user = User(email: email, displayName: fullName, password: password, imageUrl: "")
+                user.uid = sessionStore.session?.uid
+                presentation.wrappedValue.dismiss()
+            }
+            
+        }
+    }
     var body: some View {
         NavigationView{
             ZStack{
@@ -43,6 +61,21 @@ struct SignUpScreen: View {
                         .cornerRadius(6)
                         .padding(.top,6)
                     Button {
+                        if fullName.isEmpty {
+                            isShowing.toggle()
+                            messageError = String(localized: "no_fullName",comment: "First Coment")
+                        } else if email.isEmpty {
+                            isShowing.toggle()
+                            messageError = String(localized: "no_email",comment: "Second Coment")
+                        } else if password.isEmpty {
+                            isShowing.toggle()
+                            messageError = String(localized: "no_password",comment: "Three Coment")
+                        } else if cPassword.isEmpty {
+                            isShowing.toggle()
+                            messageError = String(localized: "confirm_password_text",comment: "Four Coment")
+                        } else {
+                            doSignUp()
+                        }
                         
                     } label: {
                         Text("sign_up")
@@ -55,6 +88,9 @@ struct SignUpScreen: View {
                         .stroke(lineWidth: 1.5)
                         .foregroundColor(.white))
                     .padding(.top,8)
+                    .alert(isPresented: $isShowing){
+                        return Alert(title: Text("Error"), message: Text(messageError), primaryButton: .destructive(Text("Confirm")), secondaryButton: .cancel())
+                    }
                     Spacer()
                     HStack{
                         Text("allreadey_account")
@@ -73,6 +109,9 @@ struct SignUpScreen: View {
 
                 }
                 .padding(.horizontal)
+                if signUpViewModel.isLoading {
+                    ProgressView("Loading...")
+                }
             }
             .edgesIgnoringSafeArea(.all)
         }

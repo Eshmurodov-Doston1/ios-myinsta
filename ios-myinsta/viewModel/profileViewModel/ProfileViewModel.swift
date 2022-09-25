@@ -19,4 +19,9 @@ class ProfileViewModel:ObservableObject{
         isLoading = false
         complation()
     }
+    
+    
+    func signOut(){
+        SessionStore().signOut()
+    }
 }
