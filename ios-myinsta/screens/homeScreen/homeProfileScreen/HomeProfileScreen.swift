@@ -3,6 +3,7 @@ import SDWebImageSwiftUI
 
 struct HomeProfileScreen: View {
     @ObservedObject var profileViewModel = ProfileViewModel()
+    @EnvironmentObject var sessionStore:SessionStore
     @State var level = 2
     @State var columns:[GridItem] =
     Array(repeating: GridItem(.flexible(minimum: UIScreen.width/2 - 15),spacing: 10),count: 2)
@@ -20,6 +21,11 @@ struct HomeProfileScreen: View {
     }
     
     
+    func uploadImage(){
+        let uid = (sessionStore.session?.uid)!
+        profileViewModel.uploadImageUser(uid: uid, image: selectedImage!)
+    }
+    
     func signOut(){
         profileViewModel.signOut()
     }
@@ -29,15 +35,17 @@ struct HomeProfileScreen: View {
             ZStack{
                 VStack{
                     ZStack{
-                        if selectedImage == nil {
-                            Image("image_profile")
+                        if !profileViewModel.imageUser.isEmpty {
+                            WebImage(url: URL(string: profileViewModel.imageUser))
                                 .resizable()
                                 .frame(maxWidth:80,maxHeight: 80)
                                 .clipShape(Circle())
+                                .scaledToFit()
                                 .padding(2)
-                                .overlay(Circle().stroke(lineWidth:1.5).foregroundColor(.red.opacity(0.7)))
+                                .overlay(Circle().stroke(Color.red.opacity(0.7), lineWidth: 2))
+                                .foregroundColor(Color.blue.opacity(0.5))
                         } else {
-                            Image(uiImage: selectedImage!)
+                            Image("image_profile")
                                 .resizable()
                                 .frame(maxWidth:80,maxHeight: 80)
                                 .clipShape(Circle())
@@ -81,17 +89,17 @@ struct HomeProfileScreen: View {
                                 .cancel()
                                 ])
                         })
-                        .sheet(isPresented: $isPickerDisplay, content: {
+                        .sheet(isPresented: $isPickerDisplay,onDismiss: uploadImage,content: {
                             ImagePickeView(selectedImage: $selectedImage, sourseType: sourseType)
                         })
                     }
                     VStack(spacing:5){
-                        Text("Dostonbek Eshmurodov")
+                        Text(profileViewModel.displayName)
                             .font(Font.system(size: 15))
                             .foregroundColor(.black)
                             .fontWeight(.bold)
                             .padding(.top,1)
-                        Text("eshmurodovdoston630@gmail.com")
+                        Text(profileViewModel.email)
                             .font(Font.system(size: 13))
                             .foregroundColor(.black)
                             .fontWeight(.medium)
@@ -166,6 +174,19 @@ struct HomeProfileScreen: View {
                     }
                     .padding(.top,10)
                 }
+                
+                if profileViewModel.isLoading {
+                    ProgressView{
+                        Text("Loading")
+                            .font(Font.system(size: 15))
+                            .fontWeight(.medium)
+                    }
+                    
+                    .frame(maxWidth:UIScreen.width,maxHeight: UIScreen.height)
+                    .background(.ultraThinMaterial,in: RoundedRectangle(cornerRadius: 0))
+                    .edgesIgnoringSafeArea(.all)
+                }
+                
             }
             .navigationBarTitle("Profile",displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
@@ -186,6 +207,8 @@ struct HomeProfileScreen: View {
             )
         }
         .onAppear{
+            var uid = (sessionStore.session?.uid)!
+            profileViewModel.getUserData(uid: uid)
             profileViewModel.listItems {
                 print(profileViewModel.items.count)
             }

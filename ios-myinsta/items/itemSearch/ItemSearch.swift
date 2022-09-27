@@ -1,15 +1,27 @@
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ItemSearch: View {
     var user:User
     var body: some View {
         HStack {
-            Image("image_profile")
-                .resizable()
-                .frame(maxWidth:45,maxHeight: 45)
-                .clipShape(Circle())
-                .padding(2)
-                .overlay(Circle().stroke(Color.red.opacity(0.7),lineWidth: 2))
+            
+            if user.imageUrl?.isEmpty ?? false {
+                Image("image_profile")
+                    .resizable()
+                    .frame(maxWidth:45,maxHeight: 45)
+                    .clipShape(Circle())
+                    .padding(2)
+                    .overlay(Circle().stroke(Color.red.opacity(0.7),lineWidth: 2))
+            }else {
+                WebImage(url: URL(string: user.imageUrl!))
+                    .resizable()
+                    .frame(maxWidth:45,maxHeight: 45)
+                    .clipShape(Circle())
+                    .padding(2)
+                    .overlay(Circle().stroke(Color.red.opacity(0.7),lineWidth: 2))
+            }
+
             VStack(alignment:.leading,spacing: 2){
                 Text(user.displayName!)
                     .fontWeight(.bold)
@@ -23,18 +35,18 @@ struct ItemSearch: View {
                     .lineLimit(1)
             }
             Spacer()
-            Button {
-                
-            } label: {
-                Text("Folowing")
-                    .font(Font.system(size: 15))
-                    .foregroundColor(.gray.opacity(0.7))
-            }
-            .padding(.horizontal)
-            .padding(.vertical,7)
-            .background(RoundedRectangle(cornerRadius: 6)
-                .stroke(lineWidth: 1)
-                .foregroundColor(.gray.opacity(0.7)))
+            Text("Folowing")
+                .font(Font.system(size: 15))
+                .foregroundColor(.gray.opacity(0.7))
+                .padding(.horizontal)
+                .padding(.vertical,7)
+                .background(RoundedRectangle(cornerRadius: 6)
+                    .stroke(lineWidth: 1)
+                    .foregroundColor(.gray.opacity(0.7)))
+                .onTapGesture {
+                    print("Click Folowing")
+                }
+            
 
         }
         .padding(.horizontal,10)

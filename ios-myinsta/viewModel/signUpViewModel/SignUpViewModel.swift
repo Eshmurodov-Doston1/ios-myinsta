@@ -1,6 +1,6 @@
 import Foundation
 import Firebase
-
+import FirebaseFirestore
 class SignUpViewModel:ObservableObject {
     @Published var isLoading = false
     
@@ -14,5 +14,9 @@ class SignUpViewModel:ObservableObject {
                 complation(true,nil)
             }
         }
+    }
+    
+    func saveUser(user:User){
+        DataBaseService().storeUser(user: user)
     }
 }

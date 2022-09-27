@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89012BB328E31326004E4EC9 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89012BB228E31326004E4EC9 /* DatabaseService.swift */; };
+		89012BB628E315F3004E4EC9 /* StorageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89012BB528E315F3004E4EC9 /* StorageStore.swift */; };
 		8911693D28DB2E4200EA0574 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8911693C28DB2E3B00EA0574 /* Billabong.ttf */; };
 		8937755428DB398200177990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8937755628DB398200177990 /* Localizable.strings */; };
 		8937757928DBA00F00177990 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937757828DBA00F00177990 /* User.swift */; };
@@ -46,6 +48,8 @@
 		064F2B1C27F6C9915FC1CFDC /* Pods_ios_myinsta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_myinsta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B625617F333CFE5FD65614 /* Pods-ios-myinsta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-myinsta.release.xcconfig"; path = "Target Support Files/Pods-ios-myinsta/Pods-ios-myinsta.release.xcconfig"; sourceTree = "<group>"; };
 		193CCDE4546A6F8B42C9A97D /* Pods-ios-myinsta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-myinsta.debug.xcconfig"; path = "Target Support Files/Pods-ios-myinsta/Pods-ios-myinsta.debug.xcconfig"; sourceTree = "<group>"; };
+		89012BB228E31326004E4EC9 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../../../../IosInstaClone/IosInstaClone/services/storageStore/DatabaseService.swift; sourceTree = "<group>"; };
+		89012BB528E315F3004E4EC9 /* StorageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageStore.swift; sourceTree = "<group>"; };
 		8911693C28DB2E3B00EA0574 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		8911693E28DB2E5D00EA0574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8937755528DB398200177990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -102,6 +106,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		89012BB128E31315004E4EC9 /* dataBaseService */ = {
+			isa = PBXGroup;
+			children = (
+				89012BB228E31326004E4EC9 /* DatabaseService.swift */,
+			);
+			path = dataBaseService;
+			sourceTree = "<group>";
+		};
+		89012BB428E315E1004E4EC9 /* storageStore */ = {
+			isa = PBXGroup;
+			children = (
+				89012BB528E315F3004E4EC9 /* StorageStore.swift */,
+			);
+			path = storageStore;
+			sourceTree = "<group>";
+		};
 		8937757528DB9FB700177990 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +134,8 @@
 		8937757628DB9FBD00177990 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				89012BB428E315E1004E4EC9 /* storageStore */,
+				89012BB128E31315004E4EC9 /* dataBaseService */,
 				8937757A28DBA07100177990 /* sessionStore */,
 			);
 			path = service;
@@ -536,6 +558,7 @@
 			files = (
 				895F2E0928DDDE54001004A0 /* SearchViewModel.swift in Sources */,
 				8937759328DBAE6400177990 /* Coordinator.swift in Sources */,
+				89012BB628E315F3004E4EC9 /* StorageStore.swift in Sources */,
 				8937758A28DBA39100177990 /* HomeSearchScreen.swift in Sources */,
 				8976D64028DAF2C400443DD5 /* Persistence.swift in Sources */,
 				89FDCEBD28DC58B100485F01 /* HomeViewModel.swift in Sources */,
@@ -556,6 +579,7 @@
 				8976D64E28DAF37800443DD5 /* StartScreen.swift in Sources */,
 				895F2E2528E0B15E001004A0 /* SignViewModel.swift in Sources */,
 				8976D64328DAF2C400443DD5 /* ios_myinsta.xcdatamodeld in Sources */,
+				89012BB328E31326004E4EC9 /* DatabaseService.swift in Sources */,
 				8976D65428DAF40E00443DD5 /* Utils.swift in Sources */,
 				8937758C28DBA3A900177990 /* HomeUploadScreen.swift in Sources */,
 				89FDCEBB28DC57E200485F01 /* Post.swift in Sources */,

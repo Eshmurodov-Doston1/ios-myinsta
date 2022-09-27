@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeSearchScreen: View {
     @State var search:String = ""
     @ObservedObject var searchViewModel = SearchViewModel()
+    @EnvironmentObject var sessionStore:SessionStore
     var body: some View {
         NavigationView {
             ZStack{
@@ -17,18 +18,31 @@ struct HomeSearchScreen: View {
                         .font(Font.system(size: 16))
                     List{
                         ForEach(searchViewModel.items,id: \.self){ item in
-                            ItemSearch(user: item)
-                                .listRowInsets(EdgeInsets())
+                            if item.uid != sessionStore.session?.uid! {
+                                ItemSearch(user: item)
+                                    .listRowInsets(EdgeInsets())
+                                    .onAppear{
+                                        print(item.uid)
+                                        print((sessionStore.session?.uid)!)
+                                    }
+                            }
                         }
                     }
                     .listStyle(PlainListStyle())
                        
                 }
+                if searchViewModel.isLoading {
+                    ProgressView{
+                        Text("Loading....")
+                            .font(Font.system(size: 15))
+                            .fontWeight(.medium)
+                    }
+                }
             }
             .navigationBarTitle("Search",displayMode: .inline)
         }
         .onAppear{
-            searchViewModel.getItemList {
+            searchViewModel.getItemList(keyword: search) {
                 print(searchViewModel.items.count)
             }
         }

@@ -11,7 +11,6 @@ struct SignUpScreen: View {
     @State var messageError = ""
     @EnvironmentObject var sessionStore:SessionStore
     func doSignUp(){
-        
         var result = Utils().validView(email: email, password: password)
         
         if result == nil {
@@ -24,6 +23,7 @@ struct SignUpScreen: View {
                     if isStatus {
                         var user = User(email: email, displayName: fullName, password: password, imageUrl: "")
                         user.uid = sessionStore.session?.uid
+                        signUpViewModel.saveUser(user: user)
                         presentation.wrappedValue.dismiss()
                     }
                     
