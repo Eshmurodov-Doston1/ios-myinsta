@@ -39,6 +39,14 @@ class Utils{
       }
     
     
+    static func currentData() -> String {
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateString = df.string(from: date)
+        return dateString
+    }
+    
 }
 
 extension UIScreen{

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		89012BB328E31326004E4EC9 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89012BB228E31326004E4EC9 /* DatabaseService.swift */; };
 		89012BB628E315F3004E4EC9 /* StorageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89012BB528E315F3004E4EC9 /* StorageStore.swift */; };
+		89012BC128E3749D004E4EC9 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89012BC028E3749D004E4EC9 /* UploadViewModel.swift */; };
+		89012BC528E37897004E4EC9 /* LikeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89012BC428E37897004E4EC9 /* LikeItem.swift */; };
 		8911693D28DB2E4200EA0574 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8911693C28DB2E3B00EA0574 /* Billabong.ttf */; };
 		8937755428DB398200177990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8937755628DB398200177990 /* Localizable.strings */; };
 		8937757928DBA00F00177990 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937757828DBA00F00177990 /* User.swift */; };
@@ -50,6 +52,8 @@
 		193CCDE4546A6F8B42C9A97D /* Pods-ios-myinsta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-myinsta.debug.xcconfig"; path = "Target Support Files/Pods-ios-myinsta/Pods-ios-myinsta.debug.xcconfig"; sourceTree = "<group>"; };
 		89012BB228E31326004E4EC9 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../../../../IosInstaClone/IosInstaClone/services/storageStore/DatabaseService.swift; sourceTree = "<group>"; };
 		89012BB528E315F3004E4EC9 /* StorageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageStore.swift; sourceTree = "<group>"; };
+		89012BC028E3749D004E4EC9 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
+		89012BC428E37897004E4EC9 /* LikeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeItem.swift; sourceTree = "<group>"; };
 		8911693C28DB2E3B00EA0574 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		8911693E28DB2E5D00EA0574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8937755528DB398200177990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -120,6 +124,22 @@
 				89012BB528E315F3004E4EC9 /* StorageStore.swift */,
 			);
 			path = storageStore;
+			sourceTree = "<group>";
+		};
+		89012BBF28E37482004E4EC9 /* uploadViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89012BC028E3749D004E4EC9 /* UploadViewModel.swift */,
+			);
+			path = uploadViewModel;
+			sourceTree = "<group>";
+		};
+		89012BC328E37876004E4EC9 /* likeItem */ = {
+			isa = PBXGroup;
+			children = (
+				89012BC428E37897004E4EC9 /* LikeItem.swift */,
+			);
+			path = likeItem;
 			sourceTree = "<group>";
 		};
 		8937757528DB9FB700177990 /* models */ = {
@@ -378,6 +398,7 @@
 		89FDCEB428DC577F00485F01 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				89012BBF28E37482004E4EC9 /* uploadViewModel */,
 				895F2E2628E0BFD2001004A0 /* signUpViewModel */,
 				895F2E2228E0B12F001004A0 /* signInViewModel */,
 				895F2E1028DDECFC001004A0 /* profileViewModel */,
@@ -415,6 +436,7 @@
 		89FDCEBE28DC590F00485F01 /* items */ = {
 			isa = PBXGroup;
 			children = (
+				89012BC328E37876004E4EC9 /* likeItem */,
 				895F2E0D28DDEAD5001004A0 /* itemProfile */,
 				895F2E0A28DDE132001004A0 /* itemSearch */,
 				89FDCEBF28DC591500485F01 /* itemHomePost */,
@@ -562,6 +584,7 @@
 				8937758A28DBA39100177990 /* HomeSearchScreen.swift in Sources */,
 				8976D64028DAF2C400443DD5 /* Persistence.swift in Sources */,
 				89FDCEBD28DC58B100485F01 /* HomeViewModel.swift in Sources */,
+				89012BC528E37897004E4EC9 /* LikeItem.swift in Sources */,
 				8937759028DBA3CF00177990 /* HomeProfileScreen.swift in Sources */,
 				8976D65228DAF3B300443DD5 /* SignInScreen.swift in Sources */,
 				8976D65628DB03DF00443DD5 /* SignUpScreen.swift in Sources */,
@@ -569,6 +592,7 @@
 				8976D63728DAF2C200443DD5 /* ios_myinstaApp.swift in Sources */,
 				8937757928DBA00F00177990 /* User.swift in Sources */,
 				8937759628DBAF8300177990 /* ImagePickeView.swift in Sources */,
+				89012BC128E3749D004E4EC9 /* UploadViewModel.swift in Sources */,
 				895F2E0F28DDEAE8001004A0 /* ItemProfile.swift in Sources */,
 				895F2E2828E0BFEB001004A0 /* SignUpViewModel.swift in Sources */,
 				8937757C28DBA08100177990 /* SessionStore.swift in Sources */,

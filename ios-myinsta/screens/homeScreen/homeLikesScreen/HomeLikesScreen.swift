@@ -2,12 +2,13 @@ import SwiftUI
 
 struct HomeLikesScreen: View {
     @ObservedObject var likeViewModel = LikesViewModel()
+    @EnvironmentObject var sessionStore:SessionStore
     var body: some View {
         NavigationView{
             ZStack{
                 List{
                     ForEach(likeViewModel.items,id: \.self){ item in
-                        ItemHomePost(post: item,isLick: true)
+                        LikeItem(showingAlert: false, uid: (sessionStore.session?.uid)!, viewModel: likeViewModel, post: item, isLick: false)
                             .listRowInsets(EdgeInsets())
                     }
                 }

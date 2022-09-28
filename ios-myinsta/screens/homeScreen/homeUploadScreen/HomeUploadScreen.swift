@@ -7,9 +7,17 @@ struct HomeUploadScreen: View {
     @State var isShowing = false
     @State var selectedImage:UIImage?
     @State var sourseType:UIImagePickerController.SourceType = .camera
+    @ObservedObject var uploadViewModel = UploadViewModel()
+    @EnvironmentObject var sessionStore:SessionStore
     func uploadData(){
-        if caption.isEmpty || selectedImage == nil{
-            
+        if !caption.isEmpty || selectedImage != nil{
+            uploadViewModel.apiUploadPost(uid: (sessionStore.session?.uid)!, caption: caption, image: selectedImage!, complation: { result in
+                if result {
+                    self.selectedImage = nil
+                    self.caption = ""
+                    self.tabSelection = 0
+                }
+            })
         }
         //save server
     }
@@ -89,9 +97,20 @@ struct HomeUploadScreen: View {
                     .padding(.top,10)
                     Spacer()
                 }
+                if uploadViewModel.isLoading {
+                    ProgressView{
+                        Text("Loading")
+                            .font(Font.system(size: 15))
+                            .fontWeight(.medium)
+                    }
+                    
+                    .frame(maxWidth:UIScreen.width,maxHeight: UIScreen.height)
+                    .background(.ultraThinMaterial,in: RoundedRectangle(cornerRadius: 0))
+                    .edgesIgnoringSafeArea(.all)
+                }
             }
             .navigationBarItems(trailing: Button(action: {
-                tabSelection = 0
+                uploadData()
             }, label: {
                 Image(systemName:"square.and.arrow.up")
                     

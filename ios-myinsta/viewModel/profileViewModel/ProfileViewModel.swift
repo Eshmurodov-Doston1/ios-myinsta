@@ -9,21 +9,15 @@ class ProfileViewModel:ObservableObject{
     @Published var password:String = ""
     @Published var imageUser:String = ""
     
-    func listItems(complation:@escaping ()->()){
+    func aiLoadPosts(uid:String){
         isLoading = true
         items.removeAll()
-        self.items.append(Post(title: "Dostonbek Eshmurodov1", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageProgrammer))
-        self.items.append(Post(title: "Dostonbek Eshmurodov2", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageCar1))
-        self.items.append(Post(title: "Dostonbek Eshmurodov3", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageHome))
-        self.items.append(Post(title: "Dostonbek Eshmurodov4", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageProgrammer))
-        self.items.append(Post(title: "Dostonbek Eshmurodov5", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageCar1))
-        self.items.append(Post(title: "Dostonbek Eshmurodov6", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageHome))
-        self.items.append(Post(title: "Dostonbek Eshmurodov7", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageProgrammer))
-        self.items.append(Post(title: "Dostonbek Eshmurodov8", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageCar1))
-        self.items.append(Post(title: "Dostonbek Eshmurodov9", content: "Dostonbek Eshmurodov Android va IOS Dasturlari bo'yicha Sineor Developer", imgUrl: Utils.imageHome))
-        isLoading = false
-        complation()
+        DataBaseService().loadPosts(uid:uid,complation: { posts in
+            self.items = posts!
+            self.isLoading = false
+        })
     }
+    
     
     
     func signOut(){

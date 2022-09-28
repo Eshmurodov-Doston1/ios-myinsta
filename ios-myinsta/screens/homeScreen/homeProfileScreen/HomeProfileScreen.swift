@@ -167,8 +167,10 @@ struct HomeProfileScreen: View {
                     
                     ScrollView{
                         LazyVGrid(columns: columns, content: {
-                            ForEach(profileViewModel.items,id: \.self){ item in
-                                ItemProfile(post: item, length: postSize())
+                            if profileViewModel.items != nil || !profileViewModel.items.isEmpty {
+                                ForEach(profileViewModel.items,id: \.self){ item in
+                                    ItemProfile(uid: (sessionStore.session?.uid)!, profileViewModel: profileViewModel, showingAlert: false, post: item, length: postSize())
+                                }
                             }
                         })
                     }
@@ -209,9 +211,7 @@ struct HomeProfileScreen: View {
         .onAppear{
             var uid = (sessionStore.session?.uid)!
             profileViewModel.getUserData(uid: uid)
-            profileViewModel.listItems {
-                print(profileViewModel.items.count)
-            }
+            profileViewModel.aiLoadPosts(uid: uid)
         }
     }
 }

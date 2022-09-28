@@ -49,8 +49,10 @@ struct HomeScreen: View {
                 }).tag(4)
         })
         .accentColor(.red.opacity(0.8))
+        
         .onAppear(){
             UIToolbar.appearance().barTintColor = .white
+            UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
         }
     }
 }

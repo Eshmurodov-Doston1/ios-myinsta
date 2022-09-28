@@ -1,10 +1,11 @@
 import SwiftUI
+import Firebase
 import SDWebImageSwiftUI
 
-struct ItemHomePost: View {
+struct LikeItem: View {
     @State var showingAlert:Bool = false
     var uid:String
-    var viewModel:HomeViewModel
+    var viewModel:LikesViewModel
     var post:Post
     var isLick:Bool=false
     var body: some View {
@@ -28,26 +29,24 @@ struct ItemHomePost: View {
                         .lineLimit(1)
                 }
                 .padding(.horizontal,5)
-                Spacer()
-                Image(systemName:"ellipsis")
-                    .resizable()
-                    .tint(.black)
-                    .frame(maxWidth:18,maxHeight: 4)
-                    .padding(.trailing,5)
-                    .onTapGesture {
-                        
-                    }
-             }
-            .padding(.horizontal,10)
+                Button {
+                    
+                } label: {
+                    Image(systemName:"ellipsis")
+                        .resizable()
+                        .tint(.black)
+                        .frame(maxWidth:18,maxHeight: 4)
+                }
+                .padding(.trailing,5)
+            }
+            .padding(.horizontal,5)
             .padding(.top,10)
             WebImage(url: URL(string: post.imgPost!))
                 .resizable()
+                .scaledToFit()
                 .padding(.leading,-20)
                 .padding(.trailing,-20)
-               
-                .frame(maxWidth: UIScreen.width,maxHeight: UIScreen.width)
-                .scaledToFit()
-                
+                .frame(width: UIScreen.width)
             
             HStack(spacing:10){
                 Button {
@@ -104,8 +103,8 @@ struct ItemHomePost: View {
     }
 }
 
-struct ItemHomePost_Previews: PreviewProvider {
+struct LikeItem_Previews: PreviewProvider {
     static var previews: some View {
-        ItemHomePost(showingAlert: false, uid: "11", viewModel: HomeViewModel(), post: Post(postId: "11", caption: "Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah", imgPost: Utils.imageProgrammer), isLick: false)
+        LikeItem(showingAlert: false, uid: "11", viewModel: LikesViewModel(), post: Post(postId: "11", caption: "Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah", imgPost: Utils.imageProgrammer), isLick: false)
     }
 }
