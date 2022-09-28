@@ -10,12 +10,24 @@ struct ItemHomePost: View {
     var body: some View {
         VStack{
             HStack{
-                Image("image_profile")
-                    .resizable()
-                    .frame(maxWidth:45,maxHeight: 45)
-                    .clipShape(Circle())
-                    .padding(3)
-                    .overlay(Circle().stroke(Color.red, lineWidth: 2))
+                if post.imgUser?.isEmpty ?? false{
+                    Image("image_profile")
+                        .resizable()
+                        .frame(maxWidth:45,maxHeight: 45)
+                        .clipShape(Circle())
+                        .padding(3)
+                        .overlay(Circle().stroke(Color.red, lineWidth: 2))
+                } else {
+                    WebImage(url: URL(string: post.imgUser!))
+                        .resizable()
+                        .frame(maxWidth:50,maxHeight: 50)
+                        .clipShape(Circle())
+                        .scaledToFit()
+                        .padding(2)
+                        .overlay(Circle().stroke(Color.red.opacity(0.7), lineWidth: 2))
+                        .foregroundColor(Color.blue.opacity(0.5))
+                }
+
                 VStack(alignment:.leading,spacing:3){
                     Text(post.displayName!)
                         .foregroundColor(.black)
