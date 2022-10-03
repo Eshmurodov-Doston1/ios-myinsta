@@ -19,7 +19,7 @@ struct HomeSearchScreen: View {
                     List{
                         ForEach(searchViewModel.items,id: \.self){ item in
                             if item.uid != sessionStore.session?.uid! {
-                                ItemSearch(user: item)
+                                ItemSearch(user: item,searchViewModel: searchViewModel,uid: (sessionStore.session?.uid)!)
                                     .listRowInsets(EdgeInsets())
                                     .onAppear{
                                         print(item.uid)
@@ -42,9 +42,10 @@ struct HomeSearchScreen: View {
             .navigationBarTitle("Search",displayMode: .inline)
         }
         .onAppear{
-            searchViewModel.getItemList(keyword: search) {
+            let uid = (sessionStore.session?.uid)!
+            searchViewModel.getSearchItems(uid: uid, keyword: search, complation: {
                 print(searchViewModel.items.count)
-            }
+            })
         }
     }
 }

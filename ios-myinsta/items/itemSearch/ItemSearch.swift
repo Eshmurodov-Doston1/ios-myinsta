@@ -3,6 +3,9 @@ import SDWebImageSwiftUI
 
 struct ItemSearch: View {
     var user:User
+    var searchViewModel:SearchViewModel
+    var uid:String
+    @State var isFolowingText:String = "Folow"
     var body: some View {
         HStack {
             
@@ -35,7 +38,7 @@ struct ItemSearch: View {
                     .lineLimit(1)
             }
             Spacer()
-            Text("Folowing")
+            Text(isFolowingText)
                 .font(Font.system(size: 15))
                 .foregroundColor(.gray.opacity(0.7))
                 .padding(.horizontal)
@@ -44,7 +47,13 @@ struct ItemSearch: View {
                     .stroke(lineWidth: 1)
                     .foregroundColor(.gray.opacity(0.7)))
                 .onTapGesture {
-                    print("Click Folowing")
+                    if user.isFolowed {
+                        isFolowingText = "Folowing"
+                        searchViewModel.apiUnFolowUser(uid:uid,to:user)
+                    } else {
+                        isFolowingText = "Folow"
+                        searchViewModel.apiFolowUser(uid:uid,to:user)
+                    }
                 }
             
 
@@ -56,6 +65,6 @@ struct ItemSearch: View {
 
 struct ItemSearch_Previews: PreviewProvider {
     static var previews: some View {
-        ItemSearch(user: User(uid: "ss", email: "eshmurodovdoston630@gmail.com", displayName: "Dosotnbek Eshmurodov"))
+        ItemSearch(user: User(uid: "ss", email: "eshmurodovdoston630@gmail.com", displayName: "Dosotnbek Eshmurodov"),searchViewModel: SearchViewModel(),uid: "1")
     }
 }
